@@ -1,12 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
-  <display-name>CoditasEmpManagement</display-name>
-  <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
-    <welcome-file>index.htm</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
-  </welcome-file-list>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	id="WebApp_ID" version="3.1">
+	<display-name>CoditasEmpManagement</display-name>
+
+	<servlet>
+		<servlet-name>empDetails</servlet-name>
+		<servlet-class>coditas.controller.EmpDetailsController</servlet-class>
+	</servlet>
+
+
+	<servlet-mapping>
+		<servlet-name>empDetails</servlet-name>
+		<url-pattern>/getData</url-pattern>
+	</servlet-mapping>
+	
+	<!-- <servlet>
+		<servlet-name>searchempDetails</servlet-name>
+		<servlet-class>EmpDetailsController</servlet-class>
+	</servlet>
+
+
+	<servlet-mapping>
+		<servlet-name>searchempDetails</servlet-name>
+		<url-pattern>/serachdata</url-pattern>
+	</servlet-mapping> -->
+	
+	
+	
+
 </web-app>

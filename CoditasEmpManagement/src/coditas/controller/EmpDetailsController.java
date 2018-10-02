@@ -9,20 +9,23 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import coditas.empService.EmpDetailsService;
+import coditas.empService.Employee;
 
 public class EmpDetailsController extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
+		System.out.println("In EmpController");
 		EmpDetailsService detailsService = new EmpDetailsService();
-		List list =detailsService.empDetails();
+		
+		String m_id = request.getParameter("Manager_Id");
+		
+		List<Employee> list =detailsService.empDetails(Integer.parseInt(m_id));
 		request.setAttribute("empList", list);
+		request.setAttribute("dummy", "raj");
+		System.out.println("list "+list);
 		request.getRequestDispatcher("Home.jsp").forward(request, response);
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-	}
 
 }
